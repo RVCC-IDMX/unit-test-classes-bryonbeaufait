@@ -29,14 +29,15 @@
  */
 class Polygon {
   constructor(sides) {
-    // write your code here
+    this.sides = sides;
+    this.type = 'object';
   }
 
   /**
    * @returns {number} - number of sides
    */
   count() {
-    // write your code here
+    numberOfSides = sides.length;
   }
 
   /**
