@@ -114,16 +114,10 @@ class Thermometer {
    *
    */
   toString(unit) {
-    // if (unit === 'C') {
-    //   return this.#celsius.unit;
-    // }
-    if (unit === 'K') {
-      return this.kelvin(unit);
-    }
-    if (unit === 'F') {
-      return this.fahrenheit(unit);
-    }
-    return this.#celsius(unit);
+    if (unit === 'C') return this.#celsius.unit;
+    if (unit === 'K') return this.kelvin.unit;
+    if (unit === 'F') return this.fahrenheit.unit;
+    return this.#celsius.unit;
   }
 }
 
