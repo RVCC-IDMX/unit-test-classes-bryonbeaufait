@@ -30,28 +30,31 @@
 class Polygon {
   constructor(sides) {
     this.sides = sides;
-    this.type = 'object';
+    //this.sides.push(sides);
+    this.name = 'Polygon';
   }
 
   /**
    * @returns {number} - number of sides
    */
   count() {
-    numberOfSides = sides.length;
+    //numberOfSides = sides.length;
+    return this.sides.length;
   }
 
   /**
    * @returns {number} - value of the perimeter (sum of all sides)
    */
   perimeter() {
-    // write your code here
+    let perimeter = this.sides.reduce((a, b) => a + b);
+    return perimeter;
   }
 
   /**
    * @returns {string} - name of the polygon
    */
   sayName() {
-    // write your code here
+    return this.name;
   }
 }
 
