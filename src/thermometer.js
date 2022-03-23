@@ -26,7 +26,7 @@
  *
  */
 class Thermometer {
-  #celsius;
+  #celsius = 0;
 
   /**
    * @constructor
@@ -65,7 +65,7 @@ class Thermometer {
    * @description - returns the kelvin temperature
    */
   get kelvin() {
-    return this.kelvin;
+    return this.#celsius + 273.15;
   }
 
   /**
@@ -75,7 +75,7 @@ class Thermometer {
    * @description - sets the kelvin temperature
    */
   set kelvin(tempKelvin) {
-    this.kelvin = tempKelvin;
+    this.#celsius = tempKelvin - 273.15;
   }
 
   /*  -------- fahrenheit -------------------*/
@@ -86,7 +86,7 @@ class Thermometer {
    * @description - returns the fahrenheit temperature
    */
   get fahrenheit() {
-    return this.fahrenheit;
+    return this.#celsius * 1.8 + 32;
   }
 
   /**
@@ -96,7 +96,7 @@ class Thermometer {
    * @description - sets the fahrenheit temperature
    */
   set fahrenheit(tempFahrenheit) {
-    this.fahrenheit = tempFahrenheit;
+    this.#celsius = (tempFahrenheit - 32) / 1.8;
   }
 
   /**
@@ -114,10 +114,13 @@ class Thermometer {
    *
    */
   toString(unit) {
-    if (unit === 'C') return this.#celsius.unit;
-    if (unit === 'K') return this.kelvin.unit;
-    if (unit === 'F') return this.fahrenheit.unit;
-    return this.#celsius.unit;
+    if (unit === 'K') {
+      return `${this.kelvin}K`;
+    }
+    if (unit === 'F') {
+      return `${this.fahrenheit}°F`;
+    }
+    return `${this.#celsius}°C`;
   }
 }
 
